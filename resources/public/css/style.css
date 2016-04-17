@@ -1,3 +1,15 @@
 h1 {
   text-decoration: underline;
 }
+
+
+
+/* Simple text widget styles */
+/* TODO move to dashboard codebase */
+
+.simple-text-widget {
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
