@@ -13,11 +13,14 @@
                  [compojure "1.5.0"]
                  [environ "1.0.2"]
                  [http-kit "2.1.19"]
-                 [dashboard-clj "0.1.0-SNAPSHOT"]]
+                 [lein-doo "0.1.6"]
+                 [dashboard-clj "0.1.0-SNAPSHOT"]
+                 [org.clojars.mikejs/ring-gzip-middleware "0.1.0-SNAPSHOT"]]
 
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-environ "1.0.1"]
-            [lein-pprint "1.1.1"]]
+            [lein-pprint "1.1.1"]
+            [lein-heroku "0.5.3"]]
 
   :min-lein-version "2.6.1"
 
@@ -110,7 +113,9 @@
               :aot :all
               :cljsbuild {:builds
                           {:app
-                           {:source-paths ^:replace ["src/cljs"]
+                           {
+                            :source-paths ^:replace ["src/cljs"]
                             :compiler
                             {:optimizations :advanced
-                             :pretty-print false}}}}}})
+                             :pretty-print false
+                             :pseudo-names true}}}}}})

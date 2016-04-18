@@ -24,4 +24,5 @@
 
 (defn -main [& [port]]
   (let [port (Integer. (or port (env :port) 10555))]
+    (println (str "starting server at:" port))
     (run-server http-handler {:port port :join? false})))
