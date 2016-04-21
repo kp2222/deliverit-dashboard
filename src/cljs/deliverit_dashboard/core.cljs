@@ -1,7 +1,18 @@
 (ns deliverit-dashboard.core
   (:require [dashboard-clj.core :as d]
             [dashboard-clj.layouts.grid-layout :as grid]
-            [dashboard-clj.widgets.simple-text :as s]))
+            [dashboard-clj.widgets.simple-text :as s]
+            [re-frame.core :as rf]))
+
+
+
+;; update app-state with random values
+
+(.setInterval js/window
+              #(rf/dispatch [:update-data-source
+                             (rand-nth [:kochi-weather :bangalore-weather])
+                             {:value (rand-int 100)}]) 500)
+
 
 
 
