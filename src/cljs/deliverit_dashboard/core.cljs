@@ -13,27 +13,30 @@
                              (rand-nth [:kochi-weather :bangalore-weather])
                              {:value (rand-int 100)}]) 500)
 
-
-
-
 (def dashboard {:layout :grid-layout
+                :layout-opts { :rowHeight 500 :cols 6}
                 :widgets [
                           {
                            :type :simple-text
                            :name :first-widget
                            :data-source :bangalore-weather
-                           :title "the second one"
-                           :text "Hello World!!"
-                           :layout-opts {:position {:x 0 :y 1 :h 1 :w 2 }}}
+                           :title "Bangalore weather"
+                           :text "℃"
+                           :layout-opts {:position {:x 0 :y 0 :h 1 :w 2 }}
+                           :style {:background-color "#12b0c5"
+                                   :font-family "Lucida Console, Monaco, monospace"
+                                   :font-size "30"} }
 
                           {
                            :type :simple-text
                            :name :second-widget
                            :data-source :kochi-weather
-                           :title "the second one"
-                           :text "Hello World!!"
-                           :layout-opts {:position {:x 0 :y 1 :h 1 :w 2 }}}]})
-
+                           :title "Kochi weather"
+                           :text "℃"
+                           :layout-opts {:position {:x 2 :y 0  :h 1 :w 2 }}
+                           :style {:background-color "#9c4274"
+                                   :font-family "Comic Sans MS, cursive, sans-serif"
+                                   :font-size "30"}}]})
 
 
 (d/start-dashboard dashboard "app")
