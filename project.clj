@@ -44,7 +44,7 @@
 
   :cljsbuild {:builds
               {:app
-               {:source-paths ["src/cljs"]
+               {:source-paths ["src/cljs" "checkouts/dashboard_clj/src/cljs" ]
 
                 :figwheel true
                 ;; Alternatively, you can configure a function to run every time figwheel reloads.
