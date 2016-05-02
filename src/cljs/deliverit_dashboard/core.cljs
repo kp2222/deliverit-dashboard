@@ -6,12 +6,6 @@
 
 
 
-;; update app-state with random values
-
-(.setInterval js/window
-              #(rf/dispatch [:update-data-source
-                             (rand-nth [:kochi-weather :bangalore-weather])
-                             {:value (rand-int 100)}]) 500)
 
 (def dashboard {:layout :grid-layout
                 :layout-opts { :rowHeight 500 :cols 6}

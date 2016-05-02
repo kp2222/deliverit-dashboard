@@ -15,7 +15,9 @@
                  [http-kit "2.1.19"]
                  [lein-doo "0.1.6"]
                  [dashboard-clj "0.1.0-SNAPSHOT"]
-                 [org.clojars.mikejs/ring-gzip-middleware "0.1.0-SNAPSHOT"]]
+                 [org.clojars.mikejs/ring-gzip-middleware "0.1.0-SNAPSHOT"]
+                 [tentacles "0.5.1"]
+                 [clj-http "2.1.0"]]
 
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-environ "1.0.1"]
@@ -24,7 +26,7 @@
 
   :min-lein-version "2.6.1"
 
-  :source-paths ["src/clj" "src/cljs" "dev"]
+  :source-paths ["src/clj" "src/cljs"]
 
   :test-paths ["test/clj"]
 
@@ -90,10 +92,15 @@
   :doo {:build "test"}
 
   :profiles {:dev
-             {:dependencies [[figwheel "0.5.2"]
+             
+             {
+              :source-paths ["dev"]
+              :dependencies [[figwheel "0.5.2"]
                              [figwheel-sidecar "0.5.2"]
                              [com.cemerick/piggieback "0.2.1"]
-                             [org.clojure/tools.nrepl "0.2.12"]]
+                             [org.clojure/tools.nrepl "0.2.12"]
+                             [org.clojure/tools.namespace "0.2.3"]
+                             [org.clojure/java.classpath "0.2.0"]]
 
               :plugins [[lein-figwheel "0.5.2"]
                         [lein-doo "0.1.6"]]

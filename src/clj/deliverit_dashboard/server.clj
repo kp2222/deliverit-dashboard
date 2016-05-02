@@ -1,28 +1,33 @@
 (ns deliverit-dashboard.server
-  (:require [clojure.java.io :as io]
-            [compojure.core :refer [ANY GET PUT POST DELETE defroutes]]
-            [compojure.route :refer [resources]]
-            [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
-            [ring.middleware.gzip :refer [wrap-gzip]]
-            [ring.middleware.logger :refer [wrap-with-logger]]
+  (:require [dashboard-clj.core :as dash]
             [environ.core :refer [env]]
-            [org.httpkit.server :refer [run-server]])
-  (:gen-class))
+            [deliverit-dashboard.fetcher]))
 
-(defroutes routes
-  (GET "/" _
-    {:status 200
-     :headers {"Content-Type" "text/html; charset=utf-8"}
-     :body (io/input-stream (io/resource "public/index.html"))})
-  (resources "/"))
 
-(def http-handler
-  (-> routes
-      (wrap-defaults api-defaults)
-      wrap-with-logger
-      wrap-gzip))
+
+(def datasources [{
+                   :name :bangalore-weather
+                   :read-fn :deliverit-dashboard.fetcher/fetch 
+                   :params []
+                   :schedule {
+                              :in [0 :seconds]
+                              :every [10 :seconds]
+                              }
+                   }
+                  {
+                   :name :kochi-weather
+                   :read-fn :deliverit-dashboard.fetcher/fetch 
+                   :params []
+                   :schedule {
+                              :in [0 :seconds]
+                              :every [5 :seconds]
+                              }
+                   }])
+
+
+(defn start-dashboard[]
+  (dash/start datasources {:port (Integer. (or (env :port) 5000))}))
+
 
 (defn -main [& [port]]
-  (let [port (Integer. (or port (env :port) 10555))]
-    (println (str "starting server at:" port))
-    (run-server http-handler {:port port :join? false})))
+  (start-dashboard))
