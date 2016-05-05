@@ -17,7 +17,8 @@
                  [dashboard-clj "0.1.0-SNAPSHOT"]
                  [org.clojars.mikejs/ring-gzip-middleware "0.1.0-SNAPSHOT"]
                  [tentacles "0.5.1"]
-                 [clj-http "2.1.0"]]
+                 [clj-http "2.1.0"]
+                 [clj-time "0.11.0"]]
 
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-environ "1.0.1"]
