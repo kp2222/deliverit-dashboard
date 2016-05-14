@@ -24,3 +24,48 @@ body {
     top: 50%;
     left: 50%;
 }
+
+.github-repo-stats .title{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.github-repo-stats .commit-chart{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.github-repo-stats .contributors{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    font-weight: normal;
+    text-align: left;
+}
+
+.github-repo-stats .contributors th, td {
+    font-weight: normal;
+}
+
+.github-repo-stats .github-logo {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 10%;
+}
+
+
+
+.github-repo-stats .total-commits{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+.github-repo-stats .contributors-wrapper .contributors-header{
+    margin-bottom: 10px;
+}
+
+

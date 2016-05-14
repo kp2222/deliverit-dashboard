@@ -22,7 +22,8 @@
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-environ "1.0.1"]
             [lein-pprint "1.1.1"]
-            [lein-heroku "0.5.3"]]
+            [lein-heroku "0.5.3"]
+            [lein-kibit "0.1.2"]]
 
   :min-lein-version "2.6.1"
 

@@ -2,7 +2,9 @@
   (:require [dashboard-clj.core :as d]
             [dashboard-clj.layouts.grid-layout :as grid]
             [dashboard-clj.widgets.simple-text :as s]
+            [dashboard-clj.widgets.github-repo-stats]
             [re-frame.core :as rf]))
+
 
 
 
@@ -11,26 +13,37 @@
                 :layout-opts { :rowHeight 500 :cols 6}
                 :widgets [
                           {
-                           :type :simple-text
+                           :type :github-repo-stats
                            :name :first-widget
-                           :data-source :bangalore-weather
-                           :title "Bangalore weather"
-                           :text "℃"
-                           :layout-opts {:position {:x 0 :y 0 :h 1 :w 2 }}
-                           :style {:background-color "#12b0c5"
-                                   :font-family "Lucida Console, Monaco, monospace"
-                                   :font-size "30"} }
+                           :data-source :dashboard-clj-repo-stats
+                           :repo-name "One MDM"
+                           :title "commits"
+                           :text "commit summary (last 4 weeks)"
+                           :layout-opts {:position {:x 0 :y 0  :h 1 :w 2 }}
+                           :style {:background-color "#ffffff"
+                                   :font-family "Times New Roman, Times, serif"
+                                   :font-size "20"}}
 
                           {
-                           :type :simple-text
+                           :type :github-repo-stats
                            :name :second-widget
-                           :data-source :kochi-weather
-                           :title "Kochi weather"
-                           :text "℃"
+                           :data-source :dashboard-clj-repo-stats
+                           :repo-name  "Dashboard-CLJ"
+                           :text "commit summary (last 4 weeks)"
                            :layout-opts {:position {:x 2 :y 0  :h 1 :w 2 }}
-                           :style {:background-color "#9c4274"
-                                   :font-family "Comic Sans MS, cursive, sans-serif"
-                                   :font-size "30"}}]})
+                           :style {:background-color "#ffffff"
+                                   :font-family "Times New Roman, Times, serif"
+                                   :font-size "20"}}
+                          {
+                           :type :github-repo-stats
+                           :name :third-widget
+                           :data-source :dashboard-clj-repo-stats
+                           :repo-name  "Project x"
+                           :text "commit summary (last 4 weeks)"
+                           :layout-opts {:position {:x 4 :y 0  :h 1 :w 2 }}
+                           :style {:background-color "#ffffff"
+                                   :font-family "Times New Roman, Times, serif"
+                                   :font-size "20"}}]})
 
 
 (d/start-dashboard dashboard "app")

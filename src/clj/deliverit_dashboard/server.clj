@@ -15,9 +15,11 @@
                               }
                    }
                   {
-                   :name :kochi-weather
-                   :read-fn :deliverit-dashboard.fetcher/fetch 
-                   :params []
+                   :name :dashboard-clj-repo-stats
+                   :read-fn :clojure.core/identity
+                   :params [{
+                             :contributors ["kp222@gmail.com" "someone@user.com"]
+                             :commit-data [["05/27" 1] ["06/1" 3] ["06/15" 5] ["06/30" 7]]}]
                    :schedule {
                               :in [0 :seconds]
                               :every [5 :seconds]
