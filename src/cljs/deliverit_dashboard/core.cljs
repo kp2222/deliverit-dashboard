@@ -16,7 +16,8 @@
                            :title "commits"
                            :text "commit history"
                            :layout-opts {:position {:x 0 :y 0  :h 1 :w 2 }}
-                           :style {:background-color "#ffffff"
+                           :style {:background-image "linear-gradient(120deg, #b8ce9a, #08701a)"
+                                   :background-color "#b8ce9a"
                                    :font-family "Times New Roman, Times, serif"
                                    :font-size "20"}}
                           {
@@ -26,7 +27,8 @@
                            :repo-name  "One MDM"
                            :text "commit history"
                            :layout-opts {:position {:x 2 :y 0  :h 1 :w 2 }}
-                           :style {:background-color "#ffffff"
+                           :style {:background-image "linear-gradient(120deg, #155799, #159957)"
+                                   :background-color "#ffffff"
                                    :font-family "Times New Roman, Times, serif"
                                    :font-size "20"}}
                           {
@@ -36,7 +38,7 @@
                            :repo-name  "Multunus Website"
                            :text "history"
                            :layout-opts {:position {:x 4 :y 0  :h 1 :w 2 }}
-                           :style {:background-color "#ffffff"
+                           :style {:background-image "linear-gradient(120deg, #f4164d, #7f1010)"
                                    :font-family "Times New Roman, Times, serif"
                                    :font-size "20"}}]})
 
