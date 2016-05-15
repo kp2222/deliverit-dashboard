@@ -1,35 +1,37 @@
 (ns deliverit-dashboard.server
   (:require [dashboard-clj.core :as dash]
             [environ.core :refer [env]]
-            [deliverit-dashboard.fetcher]))
+            [deliverit-dashboard.fetcher])
+  (:gen-class))
 
-
-
-(def datasources [{
-                   :name :bangalore-weather
-                   :read-fn :deliverit-dashboard.fetcher/fetch 
-                   :params []
-                   :schedule {
-                              :in [0 :seconds]
-                              :every [10 :seconds]
-                              }
-                   }
+(def datasources [
                   {
                    :name :dashboard-clj-repo-stats
-                   :read-fn :clojure.core/identity
-                   :params [{
-                             :contributors ["kp222@gmail.com" "someone@user.com"]
-                             :commit-data [["05/27" 1] ["06/1" 3] ["06/15" 5] ["06/30" 7]]}]
+                   :read-fn :deliverit-dashboard.fetcher/fetch
+                   :params [ "multunus" "dashboard-clj"]
                    :schedule {
                               :in [0 :seconds]
-                              :every [5 :seconds]
-                              }
-                   }])
+                              :every [5 :minutes]}}
+                  {
+                   :name :multunus-website
+                   :read-fn :deliverit-dashboard.fetcher/fetch
+                   :params [ "multunus" "multunus-website"]
+                   :schedule {
+                              :in [0 :seconds]
+                              :every [5 :minutes]}}
 
+                  {
+                   :name :onemdm-library
+                   :read-fn :deliverit-dashboard.fetcher/fetch
+                   :params [ "multunus" "onemdm-library"]
+                   :schedule {
+                              :in [0 :seconds]
+                              :every [5 :minutes]}}
+                  
+                  ])
 
 (defn start-dashboard[]
   (dash/start datasources {:port (Integer. (or (env :port) 5000))}))
-
 
 (defn -main [& [port]]
   (start-dashboard))
