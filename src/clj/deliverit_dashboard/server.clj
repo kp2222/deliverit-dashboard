@@ -27,6 +27,15 @@
                    :schedule {
                               :in [0 :seconds]
                               :every [5 :minutes]}}
+                  {
+                   :name :good-karma
+                   :read-fn :deliverit-dashboard.fetcher/fetch
+                   :params [ "multunus" "good-karma"]
+                   :schedule {
+                              :in [0 :seconds]
+                              :every [5 :minutes]}}
+
+                  
                   
                   ])
 

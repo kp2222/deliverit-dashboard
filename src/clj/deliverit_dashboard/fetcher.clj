@@ -1,7 +1,8 @@
 (ns deliverit-dashboard.fetcher
   (:require [tentacles.repos :as repos]
             [clj-time.coerce :as c]
-            [clj-time.format :as f]))
+            [clj-time.format :as f]
+            [environ.core :refer [env]]))
 
 (defn sum [sequence-to-be-summed]
   (reduce + sequence-to-be-summed))
@@ -28,7 +29,8 @@
 
 (defn fetch-contributor-stats [username repository]
   (repos/contributor-statistics username
-                                repository))
+                                repository
+                                {:auth (System/getenv "GITAUTH")}))
 
 (defn fetch [username repository]
   (let [contributor-stats (fetch-contributor-stats username repository)]
