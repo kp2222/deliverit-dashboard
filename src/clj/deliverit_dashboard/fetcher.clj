@@ -2,7 +2,8 @@
   (:require [tentacles.repos :as repos]
             [clj-time.coerce :as c]
             [clj-time.format :as f]
-            [environ.core :refer [env]]))
+            [environ.core :refer [env]]
+            [again.core :as again]))
 
 (defn sum [sequence-to-be-summed]
   (reduce + sequence-to-be-summed))
@@ -35,9 +36,15 @@
 (defn fetch [username repository]
   (let [contributor-stats (fetch-contributor-stats username repository)]
     (if (= contributor-stats :tentacles.core/accepted)
-      {}
+      (throw (Exception. "could not fetch data"))
       {
        :total-commits (total-number-of-commits contributor-stats)
        :weekly-commit-breakdown (weekly-commit-breakdown contributor-stats)
        :contributors (list-of-contributors contributor-stats)
        })))
+
+
+(defn fetch-with-retry [username repository]
+  (again/with-retries
+    [100 1000 2000]
+    (fetch username repository)))
