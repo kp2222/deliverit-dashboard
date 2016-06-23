@@ -19,7 +19,9 @@
                  [tentacles "0.5.1"]
                  [clj-http "2.1.0"]
                  [clj-time "0.11.0"]
-                 [listora/again "0.1.0"]]
+                 [listora/again "0.1.0"]
+                 [cljsjs/highcharts "4.2.2-2"]
+                 [cljsjs/jquery "1.11.3-0"]]
 
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-environ "1.0.1"]
@@ -95,7 +97,7 @@
   :doo {:build "test"}
 
   :profiles {:dev
-             
+
              {
               :source-paths ["dev"]
               :dependencies [[figwheel "0.5.2"]
