@@ -14,7 +14,7 @@
                  [environ "1.0.2"]
                  [http-kit "2.1.19"]
                  [lein-doo "0.1.6"]
-                 [dashboard-clj "0.1.0-SNAPSHOT"]
+                 [com.multunus/dashboard-clj "0.1.0-SNAPSHOT"]
                  [org.clojars.mikejs/ring-gzip-middleware "0.1.0-SNAPSHOT"]
                  [tentacles "0.5.1"]
                  [clj-http "2.1.0"]
@@ -49,17 +49,17 @@
 
   :cljsbuild {:builds
               {:app
-               {:source-paths ["src/cljs" "checkouts/dashboard_clj/src/cljs" ]
+               {:source-paths ["src/cljs"  ]
 
-                :figwheel true
+                :figwheel     true
                 ;; Alternatively, you can configure a function to run every time figwheel reloads.
                 ;; :figwheel {:on-jsload "deliverit-dashboard.core/on-figwheel-reload"}
 
-                :compiler {:main deliverit-dashboard.core
-                           :asset-path "js/compiled/out"
-                           :output-to "resources/public/js/compiled/deliverit_dashboard.js"
-                           :output-dir "resources/public/js/compiled/out"
-                           :source-map-timestamp true}}}}
+                :compiler     {:main deliverit-dashboard.core
+                               :asset-path "js/compiled/out"
+                               :output-to "resources/public/js/compiled/deliverit_dashboard.js"
+                               :output-dir "resources/public/js/compiled/out"
+                               :source-map-timestamp true}}}}
 
   ;; When running figwheel from nREPL, figwheel will read this configuration
   ;; stanza, but it will read it without passing through leiningen's profile
