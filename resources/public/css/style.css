@@ -28,6 +28,13 @@ body {
 .github-repo-stats {
     height: 100%;
 }
+
+.widget {
+    background-color: #fff;
+    font-family: Times New Roman, Times, serif;
+    font-size: 20px;
+}
+
 .github-repo-stats .header{
     height: 20%;
 }
@@ -92,4 +99,7 @@ body {
     margin-bottom: 10px;
 }
 
-
+.chart .title {
+    padding-left: 5%;
+    margin: 15px 0;
+}
