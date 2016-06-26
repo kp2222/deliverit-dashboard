@@ -5,10 +5,10 @@
 
 (widget-common/register-widget
  :simple-text
- (fn [{:keys [data options] :as w}]
+ (fn [data options]
    [:div {:class "simple-text-widget"}
     [:span {:class "title"} (:title options)]
     [:div {:class "data"}
      [:span
-      (get-in @data [:data]) (:text options)]]
+      (get-in data [:data]) (:text options)]]
     ]))

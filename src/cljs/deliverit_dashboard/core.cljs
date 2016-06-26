@@ -81,9 +81,9 @@
                                                             :md {:x 2 :y 6 :w 2 :h 3}
                                                             :sm {:x 0 :y 0 :w 2 :h 3 :static true}}}}})
 (def dashboard {
-                :layout      :responsive-grid-layout
-                :layout-opts {:cols {:lg 6 :md 4 :sm 2 :xs 1 :xxs 1}}
-                :widgets     (mapv #(merge % (get widget-layout (:name %))) widgets)
+                :layout  :responsive-grid-layout
+                :options {:layout-opts {:cols {:lg 6 :md 4 :sm 2 :xs 1 :xxs 1}}}
+                :widgets (mapv #(merge % (get widget-layout (:name %))) widgets)
                 })
 
 (d/start-dashboard dashboard "app")

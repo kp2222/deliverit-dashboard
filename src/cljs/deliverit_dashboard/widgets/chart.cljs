@@ -64,7 +64,7 @@
                                   {:name :line-chart :render-fn line-chart}]]
   (widget-common/register-widget
    name
-   (fn [{:keys [data options]}]
+   (fn [data options]
      [:div {:class "chart"}
       [:div.header
        [:h2 {:class "title" } (:title options)]]
@@ -75,8 +75,8 @@
                     :title  {:text nil}
                     :xAxis  {
                              :title      {:text (:x-title options)}
-                             :categories (mapv first (get-in @data [:data :weekly-commit-breakdown]))}
+                             :categories (mapv first (get-in data [:data :weekly-commit-breakdown]))}
                     :yAxis  {:title {:text (:y-title options)}}
                     :series [{
                               :name (:chart-title options)
-                              :data (mapv second (get-in @data [:data :weekly-commit-breakdown]))}]}}]]])))
+                              :data (mapv second (get-in data [:data :weekly-commit-breakdown]))}]}}]]])))
