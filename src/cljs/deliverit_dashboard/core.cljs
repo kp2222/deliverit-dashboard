@@ -60,20 +60,25 @@
                     :widget-one   {:layout-opts {:position {:lg {:x 0 :y 0 :w 2 :h 3}
                                                             :md {:x 0 :y 0 :w 2 :h 3}
                                                             :sm {:x 0 :y 0 :w 2 :h 3 :static true}}}}
-                    :widget-two   {:layout-opts {:position {:lg {:x 0 :y 0 :w 2 :h 3}
-                                                            :md {:x 0 :y 0 :w 2 :h 3}
+
+                    :widget-two   {:layout-opts {:position {:lg {:x 2 :y 0 :w 2 :h 3}
+                                                            :md {:x 2 :y 0 :w 2 :h 3}
                                                             :sm {:x 0 :y 0 :w 2 :h 3 :static true}}}}
-                    :widget-three {:layout-opts {:position {:lg {:x 0 :y 0 :w 2 :h 3}
-                                                            :md {:x 0 :y 0 :w 2 :h 3}
+
+                    :widget-three {:layout-opts {:position {:lg {:x 4 :y 0 :w 2 :h 3}
+                                                            :md {:x 0 :y 3 :w 2 :h 3}
                                                             :sm {:x 0 :y 0 :w 2 :h 3 :static true}}}}
-                    :widget-four  {:layout-opts {:position {:lg {:x 0 :y 0 :w 2 :h 3}
-                                                            :md {:x 0 :y 0 :w 2 :h 3}
+
+                    :widget-four  {:layout-opts {:position {:lg {:x 6 :y 0 :w 2 :h 3}
+                                                            :md {:x 2 :y 3 :w 2 :h 3}
                                                             :sm {:x 0 :y 0 :w 2 :h 3 :static true}}}}
-                    :widget-five  {:layout-opts {:position {:lg {:x 0 :y 0 :w 2 :h 3}
-                                                            :md {:x 0 :y 0 :w 2 :h 3}
+
+                    :widget-five  {:layout-opts {:position {:lg {:x 0 :y 3 :w 2 :h 3}
+                                                            :md {:x 0 :y 6 :w 2 :h 3}
                                                             :sm {:x 0 :y 0 :w 2 :h 3 :static true}}}}
-                    :widget-six   {:layout-opts {:position {:lg {:x 0 :y 0 :w 2 :h 3}
-                                                            :md {:x 0 :y 0 :w 2 :h 3}
+
+                    :widget-six   {:layout-opts {:position {:lg {:x 2 :y 3 :w 2 :h 3}
+                                                            :md {:x 2 :y 6 :w 2 :h 3}
                                                             :sm {:x 0 :y 0 :w 2 :h 3 :static true}}}}})
 (def dashboard {
                 :layout      :responsive-grid-layout

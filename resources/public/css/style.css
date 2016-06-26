@@ -30,7 +30,7 @@ body {
 }
 
 .widget {
-    background-color: #fff;
+    background-color: #fff !important;
     font-family: Times New Roman, Times, serif;
     font-size: 20px;
 }
