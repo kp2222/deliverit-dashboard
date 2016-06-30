@@ -9,8 +9,13 @@ body {
 
 /* Simple text widget styles */
 /* TODO move to dashboard codebase */
+.widget.react-grid-item {
+    cursor: default;
+}
 
-
+.widget.react-grid-item:active {
+    cursor: move;
+}
 
 .simple-text-widget .title{
     position: absolute;
