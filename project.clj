@@ -47,6 +47,8 @@
   ;; (browser-repl) live.
   :repl-options {:init-ns user}
 
+  :heroku {:app-name "protected-wave-36452"}
+
   :cljsbuild {:builds
               {:app
                {:source-paths ["src/cljs"  ]
