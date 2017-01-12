@@ -1,6 +1,6 @@
 (ns deliverit-dashboard.pusher
   (:require [clojure.core.async :as async]
-            [dashboard-clj.data-source :refer [data->event]]))
+            [dashboard-clj.utils :refer [data->event]]))
 
 (defn init
   [datasource]
