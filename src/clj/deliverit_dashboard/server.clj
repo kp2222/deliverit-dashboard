@@ -1,7 +1,8 @@
 (ns deliverit-dashboard.server
   (:require [dashboard-clj.core :as dash]
             [environ.core :refer [env]]
-            [deliverit-dashboard.fetcher])
+            [deliverit-dashboard.fetcher]
+            [deliverit-dashboard.pusher])
   (:gen-class))
 
 (def datasources [
@@ -35,8 +36,9 @@
                               :in [0 :seconds]
                               :every [5 :minutes]}}
 
-                  
-                  
+                  {:name    :push-example
+                   :init-fn :deliverit-dashboard.pusher/init
+                   :type    :push}
                   ])
 
 (defn start-dashboard[]
