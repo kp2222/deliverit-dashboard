@@ -6,10 +6,18 @@
             [deliverit-dashboard.widgets.github-repo-stats]
             [re-frame.core :as rf]))
 
-(def widgets [{:type :simple-text
+(def widgets [
+              {:type :simple-text
                :name :push-example
                :data-source :push-example
-               :options {:title "Text"}}
+               :options {:title "Push Example"}}
+
+              {
+               :type        :simple-text
+               :name        :poll-example
+               :data-source :poll-example
+               :options     {:title "Poll Example"}
+               }
               {
                :type        :github-repo-stats
                :name        :widget-four
@@ -62,6 +70,9 @@
 
 (def widget-layout {
                     :push-example {:layout-opts {:position {:lg {:x 0 :y 0 :w 2 :h 3}
+                                                            :md {:x 0 :y 0 :w 2 :h 3}
+                                                            :sm {:x 0 :y 0 :w 2 :h 3 :static true}}}}
+                    :poll-example {:layout-opts {:position {:lg {:x 0 :y 0 :w 2 :h 3}
                                                             :md {:x 0 :y 0 :w 2 :h 3}
                                                             :sm {:x 0 :y 0 :w 2 :h 3 :static true}}}}
                     :widget-one   {:layout-opts {:position {:lg {:x 0 :y 0 :w 2 :h 3}

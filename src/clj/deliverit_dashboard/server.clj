@@ -39,6 +39,14 @@
                   {:name    :push-example
                    :init-fn :deliverit-dashboard.pusher/init
                    :type    :push}
+
+                  {
+                   :name :poll-example
+                   :read-fn :deliverit-dashboard.fetcher/random-fetch
+                   :schedule {
+                              :in    [0 :seconds]
+                              :every [5 :seconds]}}
+
                   ])
 
 (defn start-dashboard[]

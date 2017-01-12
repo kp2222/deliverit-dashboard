@@ -48,3 +48,7 @@
   (again/with-retries
     [100 1000 2000]
     (fetch username repository)))
+
+
+(defn random-fetch []
+  (rand-int 1000))
